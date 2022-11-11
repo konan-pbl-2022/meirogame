@@ -17,5 +17,6 @@ public class ExampleUnitTest {
         System.out.println("三島 茉里花");
         System.out.println("田中　琳晟");
         System.out.println("三浦 琴美");
+        System.out.println("渡辺　智裕");
     }
 }

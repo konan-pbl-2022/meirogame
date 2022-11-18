@@ -12,7 +12,6 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.os.CountDownTimer;
 
 public class MainActivity extends AppCompatActivity {
     private int xcounter = -2000;
@@ -69,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        rightButton.setOnClickListener(new View.OnClickListener() {
+      rightButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 xcounter -=280;
                 //画像の横縦幅はそのまま維持
@@ -83,20 +82,5 @@ public class MainActivity extends AppCompatActivity {
         });
 
         final int score = getIntent().getIntExtra("SCORE", 0);//スコアの変数（仮）
-
-        CountDownTimer countDownTimer = new CountDownTimer(10000, 100) {
-            @Override
-            public void onTick(long millisUntilFinished) {
-                int time = (int)millisUntilFinished /1000;
-                ((TextView)findViewById(R.id.count)).setText("あと" + time + "秒");
-            }
-            @Override
-            public void onFinish() {
-                //カウントダウン終了時に結果画面に遷移する
-                Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
-                intent.putExtra("SCORE", score);
-                startActivity(intent);
-            }
-        }.start();
     }
 }

@@ -3,6 +3,7 @@ package com.example.meirogame;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.CycleInterpolator;
@@ -81,6 +82,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        final int score = getIntent().getIntExtra("SCORE", 0);//スコアの変数（仮）
+
         CountDownTimer countDownTimer = new CountDownTimer(10000, 100) {
             @Override
             public void onTick(long millisUntilFinished) {
@@ -89,7 +92,10 @@ public class MainActivity extends AppCompatActivity {
             }
             @Override
             public void onFinish() {
-                finish();
+                //カウントダウン終了時に結果画面に遷移する
+                Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
+                intent.putExtra("SCORE", score);
+                startActivity(intent);
             }
         }.start();
     }

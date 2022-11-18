@@ -80,17 +80,5 @@ public class MainActivity extends AppCompatActivity {
                 Map.layout(left, top, right, bottom);
             }
         });
-
-        CountDownTimer countDownTimer = new CountDownTimer(10000, 100) {
-            @Override
-            public void onTick(long millisUntilFinished) {
-                int time = (int)millisUntilFinished /1000;
-                ((TextView)findViewById(R.id.count)).setText("あと" + time + "秒");
-            }
-            @Override
-            public void onFinish() {
-                finish();
-            }
-        }.start();
     }
 }

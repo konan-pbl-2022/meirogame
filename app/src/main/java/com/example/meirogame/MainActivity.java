@@ -68,7 +68,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        rightButton.setOnClickListener(new View.OnClickListener() {
+        /*カウントダウンの処理の削除 */
+
+      rightButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 xcounter -=280;
                 //画像の横縦幅はそのまま維持

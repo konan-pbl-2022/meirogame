@@ -3,6 +3,7 @@ package com.example.meirogame;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.CycleInterpolator;
@@ -79,5 +80,7 @@ public class MainActivity extends AppCompatActivity {
                 Map.layout(left, top, right, bottom);
             }
         });
+
+        final int score = getIntent().getIntExtra("SCORE", 0);//スコアの変数（仮）
     }
 }

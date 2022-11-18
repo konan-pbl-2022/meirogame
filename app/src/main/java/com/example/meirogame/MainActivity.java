@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        /*カウントダウンの処理の削除 */
+        /* カウントダウンの処理の削除 */
 
       rightButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

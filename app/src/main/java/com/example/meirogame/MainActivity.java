@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         //buttonをクリック（onclick）したときの処理
         upButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                ycounter +=50;
+                ycounter +=250;
                 //画像の横縦幅はそのまま維持
                 int left = xcounter;
                 int top = ycounter;
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
         downButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                ycounter -=50;
+                ycounter -=250;
                 //画像の横縦幅はそのまま維持
                 int left = xcounter;
                 int top = ycounter;
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
         leftButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                xcounter +=50;
+                xcounter +=280;
                 //画像の横縦幅はそのまま維持
                 int left = xcounter;
                 int top = ycounter;
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
         rightButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                xcounter -=50;
+                xcounter -=280;
                 //画像の横縦幅はそのまま維持
                 int left = xcounter;
                 int top = ycounter;

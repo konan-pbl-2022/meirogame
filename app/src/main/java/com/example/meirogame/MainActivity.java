@@ -13,10 +13,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    private int xcounter = -2000;
-    private int ycounter = -2000;
+    private int xcounter = 0;
+    private int ycounter = 0;
+    private int cxcounter = 0;
+    private int cycounter = 0;
     private int i = 9;
     private int j = 10;
+    private int cx = 2300;
+    private int cy = -600;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,9 +31,11 @@ public class MainActivity extends AppCompatActivity {
         ImageButton leftButton = (ImageButton)findViewById(R.id.Leftbutton);
         ImageButton rightButton = (ImageButton)findViewById(R.id.Rightbutton);
         final ImageView dog = (ImageView) findViewById(R.id.Dog);
+        final ImageView candy = (ImageView) findViewById(R.id.candy);
         //ImageView Map = (ImageView) findViewById(R.id.Map);
         final ImageView Map = (ImageView) findViewById(R.id.Map);
         Map.layout(0, 0, Map.getWidth(), Map.getHeight());
+        candy.layout(0, 0, candy.getWidth(), candy.getHeight());
         //buttonをクリック（onclick）したときの処理
         upButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -47,8 +53,10 @@ public class MainActivity extends AppCompatActivity {
                 int top = ycounter;
                 int right = xcounter+Map.getWidth();
                 int bottom = ycounter + Map.getHeight();
-
-                Map.layout(left, top, right, bottom);
+                int cright = xcounter+candy.getWidth();
+                int cbottom = ycounter + candy.getHeight();
+                candy.layout(left+cx, top+cy, cright+cx, cbottom+cy);
+                Map.layout(left-2000, top-2000, right-2000, bottom-2000);
             }
         });
 
@@ -68,8 +76,10 @@ public class MainActivity extends AppCompatActivity {
                 int top = ycounter;
                 int right = xcounter+Map.getWidth();
                 int bottom = ycounter + Map.getHeight();
-
-                Map.layout(left, top, right, bottom);
+                int cright = xcounter+candy.getWidth();
+                int cbottom = ycounter + candy.getHeight();
+                candy.layout(left+cx, top+cy, cright+cx, cbottom+cy);
+                Map.layout(left-2000, top-2000, right-2000, bottom-2000);
             }
         });
 
@@ -89,8 +99,10 @@ public class MainActivity extends AppCompatActivity {
                 int top = ycounter;
                 int right = xcounter+Map.getWidth();
                 int bottom = ycounter+Map.getHeight();
-
-                Map.layout(left, top, right, bottom);
+                int cright = xcounter+candy.getWidth();
+                int cbottom = ycounter + candy.getHeight();
+                candy.layout(left+cx, top+cy, cright+cx, cbottom+cy);
+                Map.layout(left-2000, top-2000, right-2000, bottom-2000);
             }
         });
 
@@ -110,8 +122,10 @@ public class MainActivity extends AppCompatActivity {
                 int top = ycounter;
                 int right = xcounter+Map.getWidth();
                 int bottom = ycounter+Map.getHeight();
-
-                Map.layout(left, top, right, bottom);
+                int cright = xcounter+candy.getWidth();
+                int cbottom = ycounter + candy.getHeight();
+                candy.layout(left+cx, top+cy, cright+cx, cbottom+cy);
+                Map.layout(left-2000, top-2000, right-2000, bottom-2000);
             }
         });
 

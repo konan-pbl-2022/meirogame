@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.os.CountDownTimer;
 
 public class MainActivity extends AppCompatActivity {
     private int xcounter = -2000;
@@ -79,5 +80,17 @@ public class MainActivity extends AppCompatActivity {
                 Map.layout(left, top, right, bottom);
             }
         });
+
+        CountDownTimer countDownTimer = new CountDownTimer(10000, 100) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                int time = (int)millisUntilFinished /1000;
+                ((TextView)findViewById(R.id.count)).setText("あと" + time + "秒");
+            }
+            @Override
+            public void onFinish() {
+                finish();
+            }
+        }.start();
     }
 }

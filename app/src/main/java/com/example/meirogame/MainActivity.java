@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.os.CountDownTimer;
 
 public class MainActivity extends AppCompatActivity {
     private int xcounter = -2000;
@@ -67,8 +66,6 @@ public class MainActivity extends AppCompatActivity {
                 Map.layout(left, top, right, bottom);
             }
         });
-
-        /* カウントダウンの処理の削除 */
 
       rightButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

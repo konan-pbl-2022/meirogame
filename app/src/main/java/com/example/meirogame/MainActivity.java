@@ -2,20 +2,48 @@ package com.example.meirogame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.CycleInterpolator;
 import android.view.animation.TranslateAnimation;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+    private int i = 9, j = 8;
+    private int point = 0;
+    //仮壁
+    int[][] wall = {
+            {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+            {1,3,1,3,0,0,1,0,0,0,1,0,0,0,0,0,1},
+            {1,0,1,1,1,0,1,0,1,0,1,0,1,1,1,0,1},
+            {1,0,1,0,0,0,1,0,1,3,1,0,1,2,1,0,1},
+            {1,0,1,0,1,1,1,0,1,1,1,0,1,0,1,0,1},
+            {1,0,1,0,1,0,0,0,0,0,0,2,1,0,0,2,1},
+            {1,0,1,0,1,0,1,1,1,0,1,0,1,1,1,0,1},
+            {1,0,0,2,0,0,1,2,0,0,1,0,1,3,1,0,1},
+            {1,1,1,1,1,0,1,1,1,0,1,0,1,0,1,0,1},
+            {1,3,0,0,1,0,1,0,0,0,1,3,1,0,1,0,1},
+            {1,1,1,0,1,0,1,0,1,1,1,1,1,0,1,0,1},
+            {1,0,0,0,1,0,1,2,0,0,0,0,0,0,1,0,1},
+            {1,0,1,1,1,0,1,0,1,1,1,0,1,1,1,0,1},
+            {1,0,1,0,0,2,0,0,1,3,1,2,1,0,0,2,1},
+            {1,0,1,0,1,1,1,1,1,0,1,1,1,0,1,1,1},
+            {1,0,1,0,0,0,0,0,1,0,1,2,1,0,0,0,1},
+            {1,0,1,1,1,1,1,0,1,0,1,0,1,1,1,0,1},
+            {1,0,0,0,2,0,0,0,1,0,0,0,0,0,0,0,1},
+            {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
+    };
     private int xcounter = 0;
     private int ycounter = 0;
     private int cxcounter = 0;
     private int cycounter = 0;
-    private int i = 9;
-    private int j = 10;
+
     private int k = 0;
     private int l = 0;
     private int [] cx = {100,-350,100,-900,-650,1200,2300,1200,2300,1200,1750};
@@ -73,11 +101,16 @@ public class MainActivity extends AppCompatActivity {
         //ImageView Map = (ImageView) findViewById(R.id.Map);
         final ImageView Map = (ImageView) findViewById(R.id.Map);
         Map.layout(0, 0, Map.getWidth(), Map.getHeight());
-
         //buttonをクリック（onclick）したときの処理
         upButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                j--;
+                ycounter +=270;
+                i -= 1;
+                if(wall[i][j]==1) {
+                    ycounter -= 270;
+                    i += 1;
+                }
+
                 TranslateAnimation translate = new TranslateAnimation(0, 10, 0, 0);
                 // 1000ms間
                 translate.setDuration(500);
@@ -91,6 +124,13 @@ public class MainActivity extends AppCompatActivity {
                 int top = ycounter;
                 int right = xcounter+Map.getWidth();
                 int bottom = ycounter + Map.getHeight();
+                if ((wall[i][j] == 2) || (wall[i][j] == 3)) {
+                    point += 1;
+                    wall[i][j] = 0;
+                }
+                System.out.println("score");
+                System.out.println("得点"+point);
+                System.out.println("壁判定"+wall[i][j]);
                 int cright = xcounter+candy0.getWidth();
                 int cbottom = ycounter + candy0.getHeight();
                 int aright = xcounter+ame0.getWidth();
@@ -121,7 +161,13 @@ public class MainActivity extends AppCompatActivity {
 
         downButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                j++;
+                ycounter -=270;
+                i += 1;
+                if(wall[i][j]==1) {
+                    ycounter += 270;
+                    i -= 1;
+                }
+
                 TranslateAnimation translate = new TranslateAnimation(0, 10, 0, 0);
                 // 1000ms間
                 translate.setDuration(500);
@@ -135,6 +181,13 @@ public class MainActivity extends AppCompatActivity {
                 int top = ycounter;
                 int right = xcounter+Map.getWidth();
                 int bottom = ycounter + Map.getHeight();
+                if ((wall[i][j] == 2) || (wall[i][j] == 3)) {
+                    point += 1;
+                    wall[i][j] = 0;
+                }
+                System.out.println("score");
+                System.out.println("得点"+point);
+                System.out.println("壁判定"+wall[i][j]);
                 int cright = xcounter+candy0.getWidth();
                 int cbottom = ycounter + candy0.getHeight();
                 int aright = xcounter+ame0.getWidth();
@@ -165,7 +218,13 @@ public class MainActivity extends AppCompatActivity {
 
         leftButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                i--;
+                xcounter +=270;
+                j -= 1;
+                if(wall[i][j]==1) {
+                    xcounter -= 270;
+                    j += 1;
+                }
+
                 TranslateAnimation translate = new TranslateAnimation(0, 10, 0, 0);
                 // 1000ms間
                 translate.setDuration(500);
@@ -179,6 +238,13 @@ public class MainActivity extends AppCompatActivity {
                 int top = ycounter;
                 int right = xcounter+Map.getWidth();
                 int bottom = ycounter+Map.getHeight();
+                if ((wall[i][j] == 2) || (wall[i][j] == 3)) {
+                    point += 1;
+                    wall[i][j] = 0;
+                }
+                System.out.println("score");
+                System.out.println("得点"+point);
+                System.out.println("壁判定"+wall[i][j]);
                 int cright = xcounter+candy0.getWidth();
                 int cbottom = ycounter + candy0.getHeight();
                 int aright = xcounter+ame0.getWidth();
@@ -209,7 +275,13 @@ public class MainActivity extends AppCompatActivity {
 
         rightButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                i++;
+                xcounter -=270;
+                j += 1;
+                if(wall[i][j]==1) {
+                    xcounter += 270;
+                    j -= 1;
+                }
+
                 TranslateAnimation translate = new TranslateAnimation(0, 10, 0, 0);
                 // 1000ms間
                 translate.setDuration(500);
@@ -223,6 +295,13 @@ public class MainActivity extends AppCompatActivity {
                 int top = ycounter;
                 int right = xcounter+Map.getWidth();
                 int bottom = ycounter+Map.getHeight();
+                if ((wall[i][j] == 2) || (wall[i][j] == 3)) {
+                    point += 1;
+                    wall[i][j] = 0;
+                }
+                System.out.println("score");
+                System.out.println("得点"+point);
+                System.out.println("壁判定"+wall[i][j]);
                 int cright = xcounter+candy0.getWidth();
                 int cbottom = ycounter + candy0.getHeight();
                 int aright = xcounter+ame0.getWidth();
@@ -251,6 +330,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        final int score = getIntent().getIntExtra("SCORE", 0);//スコアの変数（仮）
+        final int score = getIntent().getIntExtra("SCORE", point);//スコアの変数（仮）
     }
 }

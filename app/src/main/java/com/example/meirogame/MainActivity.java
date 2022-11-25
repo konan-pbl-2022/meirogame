@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 System.out.println("score");
                 System.out.println("得点"+point);
-                System.out.println("壁判定"+wall[i][j]);
+                System.out.println("壁判定(0=床)"+wall[i][j]);
 
                 Map.layout(left, top, right, bottom);
             }
@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 System.out.println("score");
                 System.out.println("得点"+point);
-                System.out.println("壁判定"+wall[i][j]);
+                System.out.println("壁判定(0=床)"+wall[i][j]);
 
                 Map.layout(left, top, right, bottom);
             }
@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 System.out.println("score");
                 System.out.println("得点"+point);
-                System.out.println("壁判定"+wall[i][j]);
+                System.out.println("壁判定(0=床)"+wall[i][j]);
 
                 Map.layout(left, top, right, bottom);
             }
@@ -147,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 System.out.println("score");
                 System.out.println("得点"+point);
-                System.out.println("壁判定"+wall[i][j]);
+                System.out.println("壁判定(0=床)"+wall[i][j]);
 
                 Map.layout(left, top, right, bottom);
             }

@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
             {1,0,0,0,2,0,0,0,1,0,0,0,0,0,0,0,1},
             {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
     };
+
     private int xcounter = 0;
     private int ycounter = 0;
     private int cxcounter = 0;
@@ -119,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
                 // アニメーションスタート
                 dog.startAnimation(translate);
                 ycounter +=270;
+
                 //画像の横縦幅はそのまま維持
                 int left = xcounter;
                 int top = ycounter;
@@ -130,7 +132,9 @@ public class MainActivity extends AppCompatActivity {
                 }
                 System.out.println("score");
                 System.out.println("得点"+point);
+
                 System.out.println("壁判定"+wall[i][j]);
+                
                 int cright = xcounter+candy0.getWidth();
                 int cbottom = ycounter + candy0.getHeight();
                 int aright = xcounter+ame0.getWidth();
@@ -176,6 +180,7 @@ public class MainActivity extends AppCompatActivity {
                 // アニメーションスタート
                 dog.startAnimation(translate);
                 ycounter -=270;
+
                 //画像の横縦幅はそのまま維持
                 int left = xcounter;
                 int top = ycounter;
@@ -188,6 +193,7 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println("score");
                 System.out.println("得点"+point);
                 System.out.println("壁判定(0=床)"+wall[i][j]);
+
                 System.out.println("壁判定"+wall[i][j]);
                 int cright = xcounter+candy0.getWidth();
                 int cbottom = ycounter + candy0.getHeight();
@@ -234,6 +240,7 @@ public class MainActivity extends AppCompatActivity {
                 // アニメーションスタート
                 dog.startAnimation(translate);
                 xcounter +=270;
+
                 //画像の横縦幅はそのまま維持
                 int left = xcounter;
                 int top = ycounter;
@@ -246,6 +253,7 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println("score");
                 System.out.println("得点"+point);
                 System.out.println("壁判定(0=床)"+wall[i][j]);
+
                 System.out.println("壁判定"+wall[i][j]);
                 int cright = xcounter+candy0.getWidth();
                 int cbottom = ycounter + candy0.getHeight();
@@ -292,6 +300,7 @@ public class MainActivity extends AppCompatActivity {
                 // アニメーションスタート
                 dog.startAnimation(translate);
                 xcounter -=270;
+                
                 //画像の横縦幅はそのまま維持
                 int left = xcounter;
                 int top = ycounter;
@@ -304,6 +313,7 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println("score");
                 System.out.println("得点"+point);
                 System.out.println("壁判定(0=床)"+wall[i][j]);
+
                 System.out.println("壁判定"+wall[i][j]);
                 int cright = xcounter+candy0.getWidth();
                 int cbottom = ycounter + candy0.getHeight();

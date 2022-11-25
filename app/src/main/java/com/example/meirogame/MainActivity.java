@@ -119,20 +119,77 @@ public class MainActivity extends AppCompatActivity {
                 translate.setInterpolator(new CycleInterpolator(1));
                 // アニメーションスタート
                 dog.startAnimation(translate);
-                ycounter +=270;
 
                 //画像の横縦幅はそのまま維持
                 int left = xcounter;
                 int top = ycounter;
                 int right = xcounter+Map.getWidth();
                 int bottom = ycounter + Map.getHeight();
-                if ((wall[i][j] == 2) || (wall[i][j] == 3)) {
+                if (wall[i][j] == 2) {
                     point += 1;
                     wall[i][j] = 0;
+                    if((i==11)&&(j==7)){
+                        cx[0]=10000;
+                        cy[0]=10000;
+                    }else if((i==13)&&(j==5)){
+                        cx[1]=10000;
+                        cy[1]=10000;
+                    }else if((i==7)&&(j==7)){
+                        cx[2]=10000;
+                        cy[2]=10000;
+                    }else if((i==7)&&(j==3)){
+                        cx[3]=10000;
+                        cy[3]=10000;
+                    }else if((i==17)&&(j==4)){
+                        cx[4]=10000;
+                        cy[4]=10000;
+                    }else if((i==13)&&(j==11)){
+                        cx[5]=10000;
+                        cy[5]=10000;
+                    }else if((i==13)&&(j==15)){
+                        cx[6]=10000;
+                        cy[6]=10000;
+                    }else if((i==15)&&(j==11)){
+                        cx[7]=10000;
+                        cy[7]=10000;
+                    }else if((i==5)&&(j==15)){
+                        cx[8]=10000;
+                        cy[8]=10000;
+                    }else if((i==5)&&(j==11)){
+                        cx[9]=10000;
+                        cy[9]=10000;
+                    }else if((i==3)&&(j==13)){
+                        cx[10]=10000;
+                        cy[10]=10000;
+                    }
+                }else if (wall[i][j] == 3) {
+                    point += 2;
+                    wall[i][j] = 0;
+                    if((i==9)&&(j==11)){
+                        ax[0]=10000;
+                        ay[0]=10000;
+                    }else if((i==3)&&(j==9)){
+                        ax[1]=10000;
+                        ay[1]=10000;
+                    }else if((i==13)&&(j==9)){
+                        ax[2]=10000;
+                        ay[2]=10000;
+                    }else if((i==9)&&(j==1)){
+                        ax[3]=10000;
+                        ay[3]=10000;
+                    }else if((i==1)&&(j==1)){
+                        ax[4]=10000;
+                        ay[4]=10000;
+                    }else if((i==1)&&(j==3)){
+                        ax[5]=10000;
+                        ay[5]=10000;
+                    }else if((i==7)&&(j==13)){
+                        ax[6]=10000;
+                        ay[6]=10000;
+                    }
                 }
                 System.out.println("score");
                 System.out.println("得点"+point);
-
                 System.out.println("壁判定"+wall[i][j]);
                 
                 int cright = xcounter+candy0.getWidth();
@@ -179,22 +236,79 @@ public class MainActivity extends AppCompatActivity {
                 translate.setInterpolator(new CycleInterpolator(1));
                 // アニメーションスタート
                 dog.startAnimation(translate);
-                ycounter -=270;
 
                 //画像の横縦幅はそのまま維持
                 int left = xcounter;
                 int top = ycounter;
                 int right = xcounter+Map.getWidth();
                 int bottom = ycounter + Map.getHeight();
-                if ((wall[i][j] == 2) || (wall[i][j] == 3)) {
+                if (wall[i][j] == 2) {
                     point += 1;
                     wall[i][j] = 0;
+                    if((i==11)&&(j==7)){
+                        cx[0]=10000;
+                        cy[0]=10000;
+                    }else if((i==13)&&(j==5)){
+                        cx[1]=10000;
+                        cy[1]=10000;
+                    }else if((i==7)&&(j==7)){
+                        cx[2]=10000;
+                        cy[2]=10000;
+                    }else if((i==7)&&(j==3)){
+                        cx[3]=10000;
+                        cy[3]=10000;
+                    }else if((i==17)&&(j==4)){
+                        cx[4]=10000;
+                        cy[4]=10000;
+                    }else if((i==13)&&(j==11)){
+                        cx[5]=10000;
+                        cy[5]=10000;
+                    }else if((i==13)&&(j==15)){
+                        cx[6]=10000;
+                        cy[6]=10000;
+                    }else if((i==15)&&(j==11)){
+                        cx[7]=10000;
+                        cy[7]=10000;
+                    }else if((i==5)&&(j==15)){
+                        cx[8]=10000;
+                        cy[8]=10000;
+                    }else if((i==5)&&(j==11)){
+                        cx[9]=10000;
+                        cy[9]=10000;
+                    }else if((i==3)&&(j==13)){
+                        cx[10]=10000;
+                        cy[10]=10000;
+                    }
+                }else if (wall[i][j] == 3) {
+                    point += 2;
+                    wall[i][j] = 0;
+                    if((i==9)&&(j==11)){
+                        ax[0]=10000;
+                        ay[0]=10000;
+                    }else if((i==3)&&(j==9)){
+                        ax[1]=10000;
+                        ay[1]=10000;
+                    }else if((i==13)&&(j==9)){
+                        ax[2]=10000;
+                        ay[2]=10000;
+                    }else if((i==9)&&(j==1)){
+                        ax[3]=10000;
+                        ay[3]=10000;
+                    }else if((i==1)&&(j==1)){
+                        ax[4]=10000;
+                        ay[4]=10000;
+                    }else if((i==1)&&(j==3)){
+                        ax[5]=10000;
+                        ay[5]=10000;
+                    }else if((i==7)&&(j==13)){
+                        ax[6]=10000;
+                        ay[6]=10000;
+                    }
                 }
                 System.out.println("score");
                 System.out.println("得点"+point);
-                System.out.println("壁判定(0=床)"+wall[i][j]);
-
                 System.out.println("壁判定"+wall[i][j]);
+
                 int cright = xcounter+candy0.getWidth();
                 int cbottom = ycounter + candy0.getHeight();
                 int aright = xcounter+ame0.getWidth();
@@ -239,22 +353,79 @@ public class MainActivity extends AppCompatActivity {
                 translate.setInterpolator(new CycleInterpolator(1));
                 // アニメーションスタート
                 dog.startAnimation(translate);
-                xcounter +=270;
 
                 //画像の横縦幅はそのまま維持
                 int left = xcounter;
                 int top = ycounter;
                 int right = xcounter+Map.getWidth();
                 int bottom = ycounter+Map.getHeight();
-                if ((wall[i][j] == 2) || (wall[i][j] == 3)) {
+                if (wall[i][j] == 2) {
                     point += 1;
                     wall[i][j] = 0;
+                    if((i==11)&&(j==7)){
+                        cx[0]=10000;
+                        cy[0]=10000;
+                    }else if((i==13)&&(j==5)){
+                        cx[1]=10000;
+                        cy[1]=10000;
+                    }else if((i==7)&&(j==7)){
+                        cx[2]=10000;
+                        cy[2]=10000;
+                    }else if((i==7)&&(j==3)){
+                        cx[3]=10000;
+                        cy[3]=10000;
+                    }else if((i==17)&&(j==4)){
+                        cx[4]=10000;
+                        cy[4]=10000;
+                    }else if((i==13)&&(j==11)){
+                        cx[5]=10000;
+                        cy[5]=10000;
+                    }else if((i==13)&&(j==15)){
+                        cx[6]=10000;
+                        cy[6]=10000;
+                    }else if((i==15)&&(j==11)){
+                        cx[7]=10000;
+                        cy[7]=10000;
+                    }else if((i==5)&&(j==15)){
+                        cx[8]=10000;
+                        cy[8]=10000;
+                    }else if((i==5)&&(j==11)){
+                        cx[9]=10000;
+                        cy[9]=10000;
+                    }else if((i==3)&&(j==13)){
+                        cx[10]=10000;
+                        cy[10]=10000;
+                    }
+                }else if (wall[i][j] == 3) {
+                    point += 2;
+                    wall[i][j] = 0;
+                    if((i==9)&&(j==11)){
+                        ax[0]=10000;
+                        ay[0]=10000;
+                    }else if((i==3)&&(j==9)){
+                        ax[1]=10000;
+                        ay[1]=10000;
+                    }else if((i==13)&&(j==9)){
+                        ax[2]=10000;
+                        ay[2]=10000;
+                    }else if((i==9)&&(j==1)){
+                        ax[3]=10000;
+                        ay[3]=10000;
+                    }else if((i==1)&&(j==1)){
+                        ax[4]=10000;
+                        ay[4]=10000;
+                    }else if((i==1)&&(j==3)){
+                        ax[5]=10000;
+                        ay[5]=10000;
+                    }else if((i==7)&&(j==13)){
+                        ax[6]=10000;
+                        ay[6]=10000;
+                    }
                 }
                 System.out.println("score");
                 System.out.println("得点"+point);
-                System.out.println("壁判定(0=床)"+wall[i][j]);
-
                 System.out.println("壁判定"+wall[i][j]);
+
                 int cright = xcounter+candy0.getWidth();
                 int cbottom = ycounter + candy0.getHeight();
                 int aright = xcounter+ame0.getWidth();
@@ -299,22 +470,79 @@ public class MainActivity extends AppCompatActivity {
                 translate.setInterpolator(new CycleInterpolator(1));
                 // アニメーションスタート
                 dog.startAnimation(translate);
-                xcounter -=270;
                 
                 //画像の横縦幅はそのまま維持
                 int left = xcounter;
                 int top = ycounter;
                 int right = xcounter+Map.getWidth();
                 int bottom = ycounter+Map.getHeight();
-                if ((wall[i][j] == 2) || (wall[i][j] == 3)) {
+                if (wall[i][j] == 2) {
                     point += 1;
                     wall[i][j] = 0;
+                    if((i==11)&&(j==7)){
+                        cx[0]=10000;
+                        cy[0]=10000;
+                    }else if((i==13)&&(j==5)){
+                        cx[1]=10000;
+                        cy[1]=10000;
+                    }else if((i==7)&&(j==7)){
+                        cx[2]=10000;
+                        cy[2]=10000;
+                    }else if((i==7)&&(j==3)){
+                        cx[3]=10000;
+                        cy[3]=10000;
+                    }else if((i==17)&&(j==4)){
+                        cx[4]=10000;
+                        cy[4]=10000;
+                    }else if((i==13)&&(j==11)){
+                        cx[5]=10000;
+                        cy[5]=10000;
+                    }else if((i==13)&&(j==15)){
+                        cx[6]=10000;
+                        cy[6]=10000;
+                    }else if((i==15)&&(j==11)){
+                        cx[7]=10000;
+                        cy[7]=10000;
+                    }else if((i==5)&&(j==15)){
+                        cx[8]=10000;
+                        cy[8]=10000;
+                    }else if((i==5)&&(j==11)){
+                        cx[9]=10000;
+                        cy[9]=10000;
+                    }else if((i==3)&&(j==13)){
+                        cx[10]=10000;
+                        cy[10]=10000;
+                    }
+                }else if (wall[i][j] == 3) {
+                    point += 2;
+                    wall[i][j] = 0;
+                    if((i==9)&&(j==11)){
+                        ax[0]=10000;
+                        ay[0]=10000;
+                    }else if((i==3)&&(j==9)){
+                        ax[1]=10000;
+                        ay[1]=10000;
+                    }else if((i==13)&&(j==9)){
+                        ax[2]=10000;
+                        ay[2]=10000;
+                    }else if((i==9)&&(j==1)){
+                        ax[3]=10000;
+                        ay[3]=10000;
+                    }else if((i==1)&&(j==1)){
+                        ax[4]=10000;
+                        ay[4]=10000;
+                    }else if((i==1)&&(j==3)){
+                        ax[5]=10000;
+                        ay[5]=10000;
+                    }else if((i==7)&&(j==13)){
+                        ax[6]=10000;
+                        ay[6]=10000;
+                    }
                 }
                 System.out.println("score");
                 System.out.println("得点"+point);
-                System.out.println("壁判定(0=床)"+wall[i][j]);
-
                 System.out.println("壁判定"+wall[i][j]);
+
                 int cright = xcounter+candy0.getWidth();
                 int cbottom = ycounter + candy0.getHeight();
                 int aright = xcounter+ame0.getWidth();

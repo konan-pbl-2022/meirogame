@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private int ycounter = -2000;
     Handler mHandler;
     private TextView countTextView;
+    private ImageView map;
 
     private int left, right, top, bottom = 0;
 
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         ImageButton rightButton = (ImageButton)findViewById(R.id.Rightbutton);
         countTextView = (TextView)findViewById(R.id.count);
 
-        final ImageView map = (ImageView) findViewById(R.id.Map);
+        map = (ImageView) findViewById(R.id.Map);
         map.layout(left, right, map.getWidth(), map.getHeight());
 
         //buttonをクリック（onclick）したときの処理
@@ -102,38 +103,43 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        mHandler = new Handler();
-        // もしくはLooperでメインスレッドを指定して生成
-        mHandler = new Handler(Looper.getMainLooper());
-        mHandler.post(new Runnable() {
-            @Override
-            public void run() {
-                /* カウントダウン */
-                CountDownTimer countDownTimer = new CountDownTimer(10000, 100) {
-                    @Override
-                    public void onTick(final long millisUntilFinished) {
-                        final int time = (int)millisUntilFinished /1000;
-//                        countTextView.setText("あと" + String.valueOf(time) + "秒");
-                    }
-                    @Override
-                    public void onFinish() {
-                        finish();
-                    }
-                }.start();
-            }
-        });
+//        mHandler = new Handler();
+//        // もしくはLooperでメインスレッドを指定して生成
+//        mHandler = new Handler(Looper.getMainLooper());
+//        mHandler.post(new Runnable() {
+//            @Override
+//            public void run() {
+//                /* カウントダウン */
+//                CountDownTimer countDownTimer = new CountDownTimer(10000, 100) {
+//                    @Override
+//                    public void onTick(final long millisUntilFinished) {
+//                        final int time = (int)millisUntilFinished /1000;
+////                        countTextView.setText("あと" + String.valueOf(time) + "秒");
+//                    }
+//                    @Override
+//                    public void onFinish() {
+//                        finish();
+//                    }
+//                }.start();
+//            }
+//        });
 
       /* カウントダウン */
-        CountDownTimer countDownTimer = new CountDownTimer(10000, 100) {
+        CountDownTimer countDownTimer = new CountDownTimer(45000, 100) {
             @Override
             public void onTick(final long millisUntilFinished) {
                 final int time = (int)millisUntilFinished /1000;
 //                countTextView.setText("あと" + String.valueOf(time) + "秒");
-//                map.layout(left, top, right, bottom);
+                left = xcounter;
+                top = ycounter;
+                right = xcounter+map.getWidth();
+                bottom = ycounter+map.getHeight();
+                map.layout(left, top, right, bottom);
             }
             @Override
             public void onFinish() {
-                finish();
+                Intent intent = new Intent(MainActivity.this,ResultActivity.class);
+                startActivity(intent);
             }
         }.start();
 

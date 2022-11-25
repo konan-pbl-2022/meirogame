@@ -579,10 +579,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onFinish() {
                 Intent intent = new Intent(MainActivity.this,ResultActivity.class);
+                intent.putExtra("SCORE", point);
                 startActivity(intent);
             }
         }.start();
 
-        final int score = getIntent().getIntExtra("SCORE", point);//スコアの変数（仮）
     }
 }

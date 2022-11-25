@@ -15,7 +15,6 @@ import android.widget.TextView;
 import android.os.CountDownTimer;
 
 public class MainActivity extends AppCompatActivity {
-
     private int i = 9, j = 8;
     private int point = 0;
     //仮壁

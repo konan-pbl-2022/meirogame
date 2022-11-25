@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.os.CountDownTimer;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -342,6 +343,18 @@ public class MainActivity extends AppCompatActivity {
                 Map.layout(left-2000, top-2000, right-2000, bottom-2000);
             }
         });
+
+        CountDownTimer countDownTimer = new CountDownTimer(45000, 100) {
+            @Override
+            public void onTick(final long millisUntilFinished) {
+                final int time = (int)millisUntilFinished /1000;
+            }
+            @Override
+            public void onFinish() {
+                Intent intent = new Intent(MainActivity.this,ResultActivity.class);
+                startActivity(intent);
+            }
+        }.start();
 
         final int score = getIntent().getIntExtra("SCORE", point);//スコアの変数（仮）
     }

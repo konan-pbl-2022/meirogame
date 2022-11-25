@@ -25,7 +25,7 @@ public class ResultActivity extends AppCompatActivity {
                 //restartButtonをクリックしたときに呼び出される処理
 
                 //ゲーム画面(MainActivity)に遷移する
-                Intent intent = new Intent(ResultActivity.this,MainActivity.class);
+                Intent intent = new Intent(ResultActivity.this,TitleActivity.class);
                 startActivity(intent);
             }
         });
